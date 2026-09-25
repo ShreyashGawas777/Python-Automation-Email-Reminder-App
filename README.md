@@ -43,15 +43,14 @@ That is the whole project.
 ```mermaid
 flowchart LR
     A[User fills form] --> B[Flask receives data]
-    B --> C[(SQLite saves reminder)]
+    B --> C[SQLite saves reminder]
     C --> D[APScheduler schedules job]
     D --> E{Time reached?}
     E -- No --> D
-    E -- Yes --> F[send_reminder()]
+    E -- Yes --> F[send_reminder]
     F --> G[Gmail SMTP]
     G --> H[Reminder email arrives]
-    H --> I[(Status = sent)]
-```
+    H --> I[Status changes to sent]
 
 ---
 
